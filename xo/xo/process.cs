@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -9,18 +9,27 @@ namespace xo
         String[] b = new string[] { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
         public void game(string num,int player)
         {
+            int e = 0;
             int a = Int32.Parse(num)-1;
             for (int i = 0; i < 9; i++)
             {
-                if (i == a)
+                if (i == a )
                 {
-                    if(player == 1)
+                    if (b[i] == "X" | b[i] == "O")
                     {
-                        b[i] = "x";
+                        Console.WriteLine("Error");
+                        break;
                     }
-                    if(player == 0)
+                    else
                     {
-                        b[i] = "o";
+                        if (player == 1)
+                        {
+                            b[i] = "X";
+                        }
+                        if (player == 0)
+                        {
+                            b[i] = "O";
+                        }
                     }
                 }
             }
@@ -35,41 +44,48 @@ namespace xo
             Console.WriteLine(" {0} | {1} | {2} ", b[6], b[7], b[8]);
             Console.WriteLine("------------");
         }
-        public string Check
+        public int Check(int count)
         {
+            int c = count;
             if (b[0] == b[4] & b[4] == b[8])
             {
                 if (b[0] == "x")
                 {
-                   return "x is Winner";
+                    Console.WriteLine("x is Winner");
+                    return 0;
                 }
                 else
                 {
-                   return "o is Winner";
+                    Console.WriteLine("o is Winner");
+                    return 0;
                 }
-              
+    
             }
             if (b[2] == b[4] & b[4] == b[6])
             {
                 if (b[3] == "x")
                 {
-                    return "x is Winner";
+                    Console.WriteLine("x is Winner");
+                    return 0;
                 }
                 else
                 {
-                    return "o is Winner";
+                    Console.WriteLine("o is Winner");
+                    return 0;
                 }
-               
+                
             }
             if (b[0] == b[3] & b[3] == b[6])
             {
                 if (b[0] == "x")
                 {
-                    return "x is Winner";
+                    Console.WriteLine("x is Winner");
+                    return 0;
                 }
                 else
                 {
-                    return "o is Winner";
+                    Console.WriteLine("o is Winner");
+                    return 0;
                 }
                 
             }
@@ -77,11 +93,13 @@ namespace xo
             {
                 if (b[1] == "x")
                 {
-                    return "x is Winner";
+                    Console.WriteLine("x is Winner");
+                    return 0;
                 }
                 else
                 {
-                    return "o is Winner";
+                    Console.WriteLine("o is Winner");
+                    return 0;
                 }
                 
             }
@@ -89,11 +107,13 @@ namespace xo
             {
                 if (b[2] == "x")
                 {
-                    return "x is Winner";
+                    Console.WriteLine("x is Winner");
+                    return 0;
                 }
                 else
                 {
-                    return "o is Winner";
+                    Console.WriteLine("o is Winner");
+                    return 0;
                 }
                 
             }
@@ -101,11 +121,13 @@ namespace xo
             {
                 if (b[0] == "x")
                 {
-                    return "x is Winner";
+                    Console.WriteLine("x is Winner");
+                    return 0;
                 }
                 else
                 {
-                    return "o is Winner";
+                    Console.WriteLine("o is Winner");
+                    return 0;
                 }
                 
             }
@@ -113,11 +135,13 @@ namespace xo
             {
                 if (b[3] == "x")
                 {
-                    return "x is Winner";
+                    Console.WriteLine("x is Winner");
+                    return 0;
                 }
                 else
                 {
-                    return "o is Winner";
+                    Console.WriteLine("o is Winner");
+                    return 0;
                 }
                 
             }
@@ -125,14 +149,17 @@ namespace xo
             {
                 if (b[6] == "x")
                 {
-                    return "x is Winner";
+                    Console.WriteLine("x is Winner");
+                    return 0;
                 }
                 else
                 {
-                    return "o is Winner";
+                    Console.WriteLine("o is Winner");
+                    return 0;
                 }
                 
             }
+            return 1;
         }
     }
 }
