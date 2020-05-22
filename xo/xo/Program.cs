@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.IO;
 
 namespace xo
@@ -26,8 +26,12 @@ namespace xo
                     num1 = Console.ReadLine();
                     p.game(num1,player);
                     p.show();
-                    p.Check();
+                    count = p.Check(count);
                     player-- ;
+                    if (count == 0)
+                    {
+                        break;
+                    }
                 }
                 if(player == 0)
                 {
@@ -35,8 +39,8 @@ namespace xo
                     num2 = Console.ReadLine();
                     p.game(num2, player);
                     p.show();
-                    p.Check();
-
+                    count = p.Check(count);
+                    
                 }
             } while (count == 1);
 
